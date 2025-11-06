@@ -228,6 +228,7 @@ const socket = io("http://localhost:5000");
 
 export default function App() {
   // States
+  const API_URL = process.env.REACT_APP_API_URL;
   const [musics, setMusics] = useState([]);
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");

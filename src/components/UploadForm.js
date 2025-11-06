@@ -2035,7 +2035,7 @@ export default function UploadDemo() {
       console.log("📤 Sending to backend:", payload);
 
       // Save to MongoDB
-      const saveRes = await fetch("http://localhost:5000/api/music/upload", {
+      const saveRes = await fetch("https://musicsharingcloudbackend-production.up.railway.app/api/music/upload", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
