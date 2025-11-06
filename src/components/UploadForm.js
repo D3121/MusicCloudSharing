@@ -2080,8 +2080,8 @@ export default function UploadDemo() {
       {/* HEADER SECTION */}
       <div className="relative max-w-3xl mx-auto text-center mb-12 z-10">
         {/* Glassmorphism card */}
-        <div className="relative inline-block px-8 py-6 rounded-3xl backdrop-blur-xl bg-white/5 border border-white/20 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_45px_rgba(236,72,153,0.6)] transition-all duration-500">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-fuchsia-500 drop-shadow-[0_0_5px_rgba(236,72,153,0.8)] animate-neon">
+        <div className="relative inline-block px-8 py-6 rounded-3xl backdrop-blur-xl bg-white/5 border border-white/20 shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-500">
+          <h1 className="p-3 text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-fuchsia-500 drop-shadow-[0_0_5px_rgba(236,72,153,0.8)] ">
             Welcome to the music sharing app 🎵
           </h1>
           <p className=" mt-2 text-sm sm:text-base text-gray-300 tracking-wide">
