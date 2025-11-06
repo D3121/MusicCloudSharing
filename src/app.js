@@ -249,7 +249,7 @@ export default function App() {
   useEffect(() => {
     // Tải danh sách nhạc ban đầu
     axios
-      .get("http://localhost:5000/api/music")
+      .get("https://musicsharingcloudbackend-production.up.railway.app/api/music")
       .then(({ data }) => setMusics(data))
       .catch((err) => {
         console.error("Error fetching music:", err);
