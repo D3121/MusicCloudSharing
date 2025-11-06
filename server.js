@@ -47,39 +47,6 @@ app.get("/api/music", async (req, res) => {
   }
 });
 
-// app.post("/api/music/upload", async (req, res) => {
-//   try {
-//     const { title, artist, cloudinaryUrl, public_id } = req.body;
-
-//     console.log("📥 Incoming upload data:", req.body);
-
-//     // Only check required fields
-//     if (!title || !cloudinaryUrl) {
-//       console.log("⚠️ Missing required fields");
-//       return res.status(400).json({ 
-//         message: "Missing required fields: title and cloudinaryUrl" 
-//       });
-//     }
-
-//     // Lưu vào MongoDB
-//     const newMusic = await Music.create({
-//       title,
-//       artist: artist || "Unknown Artist",  // ✅ Provide default
-//       cloudinaryUrl,
-//       public_id,
-//       createdAt: new Date(),
-//     });
-
-//     console.log("✅ Saved music:", newMusic);
-//     res.status(200).json({ message: "Music saved successfully", music: newMusic });
-
-//   } catch (err) {
-//     console.error("❌ Save music error:", err);
-//     res.status(500).json({ message: "Internal Server Error", error: err.message });
-//   }
-// });
-
-// Add this after successful music save in your upload endpoint
 app.post("/api/music/upload", async (req, res) => {
   try {
     const { title, artist, cloudinaryUrl, public_id } = req.body;
@@ -112,16 +79,13 @@ app.post("/api/music/upload", async (req, res) => {
   }
 });
 
-// 🔌 SOCKET.IO
 io.on("connection", (socket) => {
   console.log("🔌 Client connected:", socket.id);
   socket.on("disconnect", () => console.log("❎ Client disconnected:", socket.id));
 });
 
-// 🔹 Gắn routes sau khi io có giá trị
 app.use("/api/music", musicRoutes(io));
 
-// ✅ START SERVER
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () =>
   console.log(`🚀 Server running on http://localhost:${PORT}`)
