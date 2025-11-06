@@ -224,7 +224,7 @@ import NowPlayingBar from "./components/NowPlayingBar";
 // Import SuccessModal nếu bạn đã tách nó ra thành một component riêng
 // Nếu chưa, tôi sẽ tích hợp lại vào UploadForm hoặc App.js
 
-const socket = io("http://localhost:5000");
+const socket = io("https://musicsharingcloudbackend-production.up.railway.app");
 
 export default function App() {
   // States
@@ -322,7 +322,7 @@ export default function App() {
     try {
       // ⚠️ Tạm thời bỏ qua Cloudinary cho ví dụ này, chỉ gọi backend trực tiếp
       // Nếu backend của bạn đã xử lý Cloudinary, thì không cần đổi
-      const uploadRes = await axios.post("http://localhost:5000/api/music/upload", formData, {
+      const uploadRes = await axios.post("https://musicsharingcloudbackend-production.up.railway.app/api/music/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
         onUploadProgress: (event) =>
           setProgress(Math.round((event.loaded * 100) / event.total)),
